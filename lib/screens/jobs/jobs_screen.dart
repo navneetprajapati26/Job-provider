@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_9/util/job_box/jobBox.dart';
-
+import 'package:project_9/screens/jobs/job_model.dart';
+import '../../util/service_box/jobBox.dart';
 import '../../util/theem/colours.dart';
 import '../../util/theem/text_style.dart';
 
@@ -12,6 +12,10 @@ class JobsScreen extends StatefulWidget {
 }
 
 class _JobsScreenState extends State<JobsScreen> {
+
+  List job = [
+    JobModel("p0", "c0","gjs","ggns","gjg","gm","gj"),
+  ];
 
   final TextEditingController searchController = TextEditingController();
 
@@ -49,11 +53,20 @@ class _JobsScreenState extends State<JobsScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: job.length,
                   itemBuilder: (context, index) {
-                    return const Padding(
+                    return Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: JobBox(),
+                      child: ServiceBox(
+                        jobPost: job[index].jobPost,
+                        companiName: job[index].companiName,
+                        companiLocation: job[index].companiLocation,
+                        jobPosition: job[index].jobPosition,
+                        jobRating: job[index].jobRating,
+                        jobSalary: job[index].jobSalary,
+                        jobType: job[index].jobType,
+
+                      ),
                     );
                   }),
             ),

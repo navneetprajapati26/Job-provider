@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:project_9/util/job_box/jobBox.dart';
 import 'package:project_9/util/theem/colours.dart';
 
 import '../../util/button/textBtn.dart';
 import '../../util/find_your_job/find_your_job.dart';
+import '../../util/service_box/jobBox.dart';
 import '../../util/theem/text_style.dart';
 
 class Home extends StatefulWidget {
@@ -23,16 +22,24 @@ class _HomeState extends State<Home> {
       resizeToAvoidBottomInset: true,
       backgroundColor: background,
       appBar: AppBar(
-        title: Text("Home",style: h2HeadingTextStyle,),
+        title: Text(
+          "Home",
+          style: h2HeadingTextStyle,
+        ),
         centerTitle: true,
         backgroundColor: background,
         elevation: 0,
         actions: [
           IconButton(
-            onPressed: (){},
-            icon: const Icon(Icons.notifications,color: Colors.black,),
+            onPressed: () {},
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.black,
+            ),
           ),
-          const SizedBox(width: 20,)
+          const SizedBox(
+            width: 20,
+          )
         ],
       ),
       body: SafeArea(
@@ -92,7 +99,7 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Top companies",
+                                "Top constant",
                                 style: h2HeadingTextStyle,
                               ),
                               TextBtn(
@@ -101,7 +108,15 @@ class _HomeState extends State<Home> {
                               )
                             ],
                           ),
-                          const JobBox(),
+                          ServiceBox(
+                            jobPost: "Rajesh Kumar ",
+                            companiName: "Business consultant,",
+                            companiLocation: "Varanasi",
+                            jobType: "",
+                            jobSalary: "4k/h",
+                            jobRating: "5",
+                            jobPosition: "Senior consultant ",
+                          ),
                         ],
                       ),
                     ),
@@ -113,7 +128,7 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Top constant",
+                                "Top Companies",
                                 style: h2HeadingTextStyle,
                               ),
                               TextBtn(
@@ -122,7 +137,15 @@ class _HomeState extends State<Home> {
                               )
                             ],
                           ),
-                          const JobBox(),
+                          ServiceBox(
+                            jobPost: "Flutter Devloper",
+                            companiName: "Sofodel",
+                            companiLocation: "New Delhi ",
+                            jobType: "Full time",
+                            jobSalary: "20k/mon",
+                            jobRating: "4.9",
+                            jobPosition: "Junior developer",
+                          ),
                         ],
                       ),
                     ),

@@ -6,8 +6,25 @@ import 'package:project_9/util/theem/colours.dart';
 import '../button/custmBtn.dart';
 import '../theem/text_style.dart';
 
-class JobBox extends StatelessWidget {
-  const JobBox({Key? key}) : super(key: key);
+class ServiceBox extends StatelessWidget {
+  String jobPost;
+  String companiName;
+  String companiLocation;
+  String jobType;
+  String jobPosition;
+  String jobSalary;
+  String jobRating;
+
+  ServiceBox(
+      {Key? key,
+      required this.jobPost,
+      required this.companiName,
+      required this.companiLocation,
+      required this.jobPosition,
+      required this.jobRating,
+      required this.jobSalary,
+      required this.jobType})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +47,7 @@ class JobBox extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const Padding(
-                      padding:
-                          EdgeInsets.only(left: 8, bottom: 8, top: 8),
+                      padding: EdgeInsets.only(left: 8, bottom: 8, top: 8),
                       child: CircleAvatar(
                         radius: 30,
                         backgroundImage:
@@ -45,12 +61,12 @@ class JobBox extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Flutter developer ",
+                            jobPost,
                             style: h0HeadingTextStyle,
                           ),
-                          const Text(
-                            "Sofodel . New Delhi India ",
-                            style: TextStyle(
+                          Text(
+                            "${companiName} ${companiLocation} ",
+                            style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.normal,
                                 color: Colors.black38),
@@ -64,14 +80,14 @@ class JobBox extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(
+                    children: [
+                      const Icon(
                         Icons.star_sharp,
                         color: Colors.orange,
                       ),
                       Text(
-                        "4.5",
-                        style: TextStyle(
+                        jobRating,
+                        style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
@@ -84,9 +100,9 @@ class JobBox extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const Text(
-              "15k/Mon",
-              style: TextStyle(
+             Text(
+              jobSalary,
+              style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: Colors.indigo),
@@ -104,9 +120,9 @@ class JobBox extends StatelessWidget {
                         color: background,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Text(
-                        "Senior designer",
-                        style: TextStyle(
+                      child:Text(
+                        jobPosition,
+                        style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
                             color: Colors.black54),
@@ -123,9 +139,9 @@ class JobBox extends StatelessWidget {
                         color: background,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Text(
-                        "Full time",
-                        style: TextStyle(
+                      child: Text(
+                        jobType,
+                        style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
                             color: Colors.black54),

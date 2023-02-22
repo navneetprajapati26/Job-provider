@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../util/job_box/jobBox.dart';
+import '../../util/service_box/jobBox.dart';
 import '../../util/theem/colours.dart';
 import '../../util/theem/text_style.dart';
 class ConsultantScreen extends StatefulWidget {
@@ -45,9 +44,17 @@ class _ConsultantScreenState extends State<ConsultantScreen> {
                   child: ListView.builder(
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return const Padding(
+                        return Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: JobBox(),
+                          child: ServiceBox(
+                            jobPost: "Flutter Devloper",
+                            companiName: "Sofodel",
+                            companiLocation: "",
+                            jobType: "",
+                            jobSalary: "",
+                            jobRating: "",
+                            jobPosition: "",
+                          ),
                         );
                       }),
                 ),
