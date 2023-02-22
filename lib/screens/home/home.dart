@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:project_9/util/job_box/jobBox.dart';
 import 'package:project_9/util/theem/colours.dart';
 
+import '../../util/button/textBtn.dart';
 import '../../util/find_your_job/find_your_job.dart';
 import '../../util/theem/text_style.dart';
 
@@ -29,9 +30,9 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
             onPressed: (){},
-            icon: Icon(Icons.notifications,color: Colors.black,),
+            icon: const Icon(Icons.notifications,color: Colors.black,),
           ),
-          SizedBox(width: 20,)
+          const SizedBox(width: 20,)
         ],
       ),
       body: SafeArea(
@@ -59,8 +60,72 @@ class _HomeState extends State<Home> {
               Expanded(
                 child: ListView(
                   children: [
-                    FindYourJob(),
-                    JobBox(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Find Your Job",
+                                style: h2HeadingTextStyle,
+                              ),
+                              // TextBtn(
+                              //   onPressed: () {},
+                              //   name: "view all",
+                              // )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const FindYourJob(),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Top companies",
+                                style: h2HeadingTextStyle,
+                              ),
+                              TextBtn(
+                                onPressed: () {},
+                                name: "view all",
+                              )
+                            ],
+                          ),
+                          const JobBox(),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Top constant",
+                                style: h2HeadingTextStyle,
+                              ),
+                              TextBtn(
+                                onPressed: () {},
+                                name: "view all",
+                              )
+                            ],
+                          ),
+                          const JobBox(),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               )
