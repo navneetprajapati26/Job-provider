@@ -7,6 +7,8 @@ import 'package:project_9/util/bottom_navigation_bar/BottomNavProvider.dart';
 import 'package:project_9/util/bottom_navigation_bar/Bottom_Nav_Bar.dart';
 import 'package:provider/provider.dart';
 
+import 'harsit.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Color(0x00ffffff)));
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: const SplashScreen(),
-      home: BottomNavBar(),
+      //home: BottomNavBar(),
+      home: Harsit(),
     ),);
   }
 }
