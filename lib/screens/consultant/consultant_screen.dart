@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../util/service_box/jobBox.dart';
 import '../../util/theem/colours.dart';
 import '../../util/theem/text_style.dart';
+import 'consultant.dart';
 class ConsultantScreen extends StatefulWidget {
   const ConsultantScreen({Key? key}) : super(key: key);
 
@@ -10,6 +11,13 @@ class ConsultantScreen extends StatefulWidget {
 }
 
 class _ConsultantScreenState extends State<ConsultantScreen> {
+
+  List consultants = [
+    ConsultantModel("Raj kumar", "Consultant","New Delhi","State management","Animation","20k/mon","4.9"),
+    ConsultantModel("Jagdish", "Consultant","California","State management","Animation","20k/mon","4.9"),
+    ConsultantModel("Kuldeep", "Consultant","New Delhi","State management","Animation","20k/mon","4.9"),
+    ConsultantModel("Rammbh", "Consultant","Karachi","State management","Animation","90k/h","5.0"),
+  ];
 
   final searchController = TextEditingController();
 
@@ -42,18 +50,18 @@ class _ConsultantScreenState extends State<ConsultantScreen> {
                 ),
                 Expanded(
                   child: ListView.builder(
-                      itemCount: 10,
+                      itemCount: consultants.length,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: EdgeInsets.all(8.0),
                           child: ServiceBox(
-                            jobPost: "Flutter Devloper",
-                            companiName: "Sofodel",
-                            companiLocation: "",
-                            jobType: "",
-                            jobSalary: "",
-                            jobRating: "",
-                            jobPosition: "",
+                            jobPost: consultants[index].jobPost,
+                            companiName: consultants[index].companiName,
+                            companiLocation: consultants[index].companiLocation,
+                            jobPosition: consultants[index].jobPosition,
+                            jobRating: consultants[index].jobRating,
+                            jobSalary: consultants[index].jobSalary,
+                            jobType: consultants[index].jobType,
                           ),
                         );
                       }),

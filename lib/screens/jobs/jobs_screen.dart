@@ -14,7 +14,10 @@ class JobsScreen extends StatefulWidget {
 class _JobsScreenState extends State<JobsScreen> {
 
   List job = [
-    JobModel("p0", "c0","gjs","ggns","gjg","gm","gj"),
+    JobModel("Flutter developer", "Sofodel.","New Delhi","State management","Animation","20k/mon","4.9"),
+    JobModel("Android developer", "Googel.","California","State management","Animation","20k/mon","4.9"),
+    JobModel("Flutter developer", "Sofodel.","New Delhi","State management","Animation","20k/mon","4.9"),
+    JobModel("Android developer", "Googel.","California","State management","Animation","20k/mon","4.9"),
   ];
 
   final TextEditingController searchController = TextEditingController();

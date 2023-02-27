@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_9/screens/authentication/login_screen.dart';
-import 'package:project_9/screens/authentication/sign_up_screen.dart';
-import 'package:project_9/screens/splash_screen/splash.dart';
 import 'package:project_9/util/bottom_navigation_bar/BottomNavProvider.dart';
 import 'package:project_9/util/bottom_navigation_bar/Bottom_Nav_Bar.dart';
 import 'package:provider/provider.dart';
 
-import 'harsit.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -31,8 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: const SplashScreen(),
-      //home: BottomNavBar(),
-      home: Harsit(),
+      home: BottomNavBar(),
     ),);
   }
 }

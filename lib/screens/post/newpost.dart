@@ -6,14 +6,14 @@ import 'package:project_9/util/button/textBtn.dart';
 import '../../util/theem/colours.dart';
 import '../../util/theem/text_style.dart';
 
-class PostScreen extends StatefulWidget {
+class NewPostScreen extends StatefulWidget {
   @override
-  _PostScreenState createState() => _PostScreenState();
+  _NewPostScreenState createState() => _NewPostScreenState();
 }
 
-class _PostScreenState extends State<PostScreen> {
+class _NewPostScreenState extends State<NewPostScreen> {
   final _textController = TextEditingController();
-   File? _image;
+  File? _image;
 
   Future<void> _getImage(ImageSource source) async {
     PickedFile? imageFile = await ImagePicker().getImage(
@@ -40,21 +40,31 @@ class _PostScreenState extends State<PostScreen> {
     return Scaffold(
       backgroundColor: background,
       appBar: AppBar(
-          backgroundColor: background,
+        backgroundColor: background,
         elevation: 0,
-        title: Text('New Post',style: h2HeadingTextStyle,),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_rounded,color: headingColour,),
+          onPressed: (){Navigator.pop(context);},
+        ),
+        title: Text(
+          'New Post',
+          style: h2HeadingTextStyle,
+        ),
         centerTitle: true,
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextBtn(name: "Post", onPressed: () {
-              // TODO: Add post functionality here
-              final text = _textController.text.trim();
-              if (text.isEmpty && _image == null) {
-                return;
-              }
-              // TODO: Implement post functionality here
-            },),
+            child: TextBtn(
+              name: "Post",
+              onPressed: () {
+                // TODO: Add post functionality here
+                final text = _textController.text.trim();
+                if (text.isEmpty && _image == null) {
+                  return;
+                }
+                // TODO: Implement post functionality here
+              },
+            ),
           )
         ],
       ),
@@ -78,7 +88,7 @@ class _PostScreenState extends State<PostScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.camera_alt,color: Colors.black),
+                  icon: const Icon(Icons.camera_alt, color: Colors.black),
                   onPressed: () => _getImage(ImageSource.camera),
                 ),
                 Expanded(
@@ -104,4 +114,3 @@ class _PostScreenState extends State<PostScreen> {
     );
   }
 }
-

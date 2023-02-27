@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:project_9/screens/post/allposts.dart';
 import 'package:project_9/screens/profile/profile.dart';
 import 'package:provider/provider.dart';
 
 import '../../screens/consultant/consultant_screen.dart';
 import '../../screens/home/home.dart';
 import '../../screens/jobs/jobs_screen.dart';
-import '../../screens/post/post.dart';
+import '../../screens/post/newpost.dart';
 import '../theem/colours.dart';
 import 'BottomNavProvider.dart';
 
@@ -15,15 +16,15 @@ class BottomNavBar extends StatelessWidget {
   List<dynamic> screens = [
     Home(),
     JobsScreen(),
-    PostScreen(),
+    AllPosts(),
     ConsultantScreen(),
     ProfileScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
-    final _screenindexprovider = Provider.of<BottomNavProvider>(context);
-    int currentScreenIndex = _screenindexprovider.currentScreenIndex;
+    final screenindexprovider = Provider.of<BottomNavProvider>(context);
+    int currentScreenIndex = screenindexprovider.currentScreenIndex;
 
     return Scaffold(
       backgroundColor: navBarColor,
@@ -42,7 +43,7 @@ class BottomNavBar extends StatelessWidget {
           color: navBarUSelectedIconColor,
         ),
         unselectedItemColor:navBarUSelectedIconColor,
-        onTap: (value) => _screenindexprovider.updateScreenIndex(value),
+        onTap: (value) => screenindexprovider.updateScreenIndex(value),
         items: [
           BottomNavigationBarItem(
             label: 'home',

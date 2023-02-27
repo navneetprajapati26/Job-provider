@@ -62,7 +62,7 @@ class ServiceBox extends StatelessWidget {
                         children: [
                           Text(
                             jobPost,
-                            style: h0HeadingTextStyle,
+                            style: h1HeadingTextStyle,
                           ),
                           Text(
                             "${companiName} ${companiLocation} ",
@@ -114,7 +114,7 @@ class ServiceBox extends StatelessWidget {
                   children: [
                     Container(
                       height: 35,
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      padding: const EdgeInsets.only(left: 8, right: 8),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: background,
@@ -123,7 +123,7 @@ class ServiceBox extends StatelessWidget {
                       child:Text(
                         jobPosition,
                         style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 10,
                             fontWeight: FontWeight.normal,
                             color: Colors.black54),
                       ),
@@ -133,7 +133,7 @@ class ServiceBox extends StatelessWidget {
                     ),
                     Container(
                       height: 35,
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      padding: const EdgeInsets.only(left: 8, right: 8),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: background,
@@ -142,7 +142,7 @@ class ServiceBox extends StatelessWidget {
                       child: Text(
                         jobType,
                         style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 10,
                             fontWeight: FontWeight.normal,
                             color: Colors.black54),
                       ),
